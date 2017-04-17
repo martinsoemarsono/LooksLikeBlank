@@ -24,4 +24,11 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }
+
+    /** Called when the user taps the Touch Me If You Dare button */
+    public void TouchMe(View view) {
+        // Do something in response to button
+        Intent intent = new Intent(this, TouchMeIfYouDare.class);
+        startActivity(intent);
+    }
 }

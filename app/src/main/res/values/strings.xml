@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">"Hello World"</string>
+    <string name="app_name">"Looks Like Blank"</string>
     <string name="edit_message">Enter a Message</string>
     <string name="button_send">Send</string>
+    <string name="Touch_Me">Touch Me If You Dare</string>
+    <string name="You_Died">You Died</string>
 </resources>
