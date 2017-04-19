@@ -8,14 +8,15 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="84dp"
-        android:layout_height="20dp"
+        android:layout_width="202dp"
+        android:layout_height="108dp"
         android:layout_marginTop="16dp"
         android:fontFamily="casual"
         android:text="@string/You_Died"
-        android:textSize="14sp"
-        app:layout_constraintHorizontal_bias="0.547"
+        android:textSize="36sp"
+        app:layout_constraintHorizontal_bias="0.546"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="69dp" />
 </android.support.constraint.ConstraintLayout>
