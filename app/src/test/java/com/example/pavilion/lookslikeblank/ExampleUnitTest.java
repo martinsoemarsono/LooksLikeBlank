@@ -1,6 +1,7 @@
 package com.example.pavilion.lookslikeblank;
 
 import android.content.Context;
+import android.content.Intent;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -8,6 +9,7 @@ import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import static org.junit.Assert.*;
+import static org.mockito.Mockito.when;
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -27,6 +29,7 @@ public class ExampleUnitTest {
 
     @Test
     public void string_isTransferred() throws Exception {
-
+        String Key = "com.example.pavilion.MESSAGE";
+        String Value = "Check this message";
     }
 }
