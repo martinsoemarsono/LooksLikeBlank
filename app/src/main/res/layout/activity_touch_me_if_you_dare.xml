@@ -19,14 +19,14 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             android:weightSum="1">
 
             <TextView
                 android:id="@+id/textView7"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="match_parent"
                 android:text="@string/Guess_this"
                 android:textAlignment="center"
                 android:textSize="18sp" />
@@ -36,7 +36,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="CheckAnswer"
-                android:text="@string/Answer" />
+                android:text="@string/Answer"
+                android:textAlignment="center" />
 
             <ImageView
                 android:id="@+id/imageView4"
