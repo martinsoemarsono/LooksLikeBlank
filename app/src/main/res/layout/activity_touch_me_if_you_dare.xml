@@ -37,13 +37,19 @@
                 android:layout_height="wrap_content"
                 android:onClick="CheckAnswer"
                 android:text="@string/Answer"
-                android:textAlignment="center" />
+                android:textAlignment="center"/>
 
             <ImageView
                 android:id="@+id/imageView4"
                 android:layout_width="match_parent"
                 android:layout_height="463dp"
                 app:srcCompat="@drawable/picture1" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Button"/>
 
         </LinearLayout>
     </ScrollView>
