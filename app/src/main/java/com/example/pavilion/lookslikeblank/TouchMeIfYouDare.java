@@ -19,6 +19,9 @@ public static final String EXTRA_MESSAGE1 = "com.example.pavilion.MESSAGE";
     public void CheckAnswer(View view) {
         // Do something in response to button
         Intent intent = new Intent(this, AnswerActivity.class);
+        EditText editText = (EditText) findViewById(R.id.editText);
+        String message = editText.getText().toString();
+        intent.putExtra(EXTRA_MESSAGE1, message);
         startActivity(intent);
     }
 }
