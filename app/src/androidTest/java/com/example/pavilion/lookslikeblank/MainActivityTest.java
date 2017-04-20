@@ -13,6 +13,7 @@ import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.withClassName;
+import static android.support.test.espresso.matcher.ViewMatchers.withHint;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 
@@ -41,8 +42,8 @@ public class MainActivityTest {
     public void clickTouchMeIfYouDare_OpensPicture() throws Exception {
         onView(withText("Touch Me If You Dare"))
                 .perform(click());
-        onView(withId(R.id.button3))
-                .check(matches(withText("CHECK OUT WHAT IT IS!")));
+        onView(withId(R.id.editText3))
+                .check(matches(withHint("What do you see?")));
     }
 
 }
