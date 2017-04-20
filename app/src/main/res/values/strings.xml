@@ -8,4 +8,5 @@
     <string name="AnswerPic1">A Human!</string>
     <string name="Answer">Check out what it is!</string>
     <string name="Next">Next!</string>
+    <string name="Previous">Previous!</string>
 </resources>
