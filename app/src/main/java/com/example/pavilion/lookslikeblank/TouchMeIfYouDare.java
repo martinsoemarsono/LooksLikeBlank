@@ -8,7 +8,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class TouchMeIfYouDare extends AppCompatActivity {
-public static final String EXTRA_MESSAGE1 = "com.example.pavilion.MESSAGE";
+public static final String EXTRA_MESSAGE = "com.example.pavilion.MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,9 +19,9 @@ public static final String EXTRA_MESSAGE1 = "com.example.pavilion.MESSAGE";
     public void CheckAnswer(View view) {
         // Do something in response to button
         Intent intent = new Intent(this, AnswerActivity.class);
-        EditText editText = (EditText) findViewById(R.id.editText);
+        EditText editText = (EditText) findViewById(R.id.editText3);
         String message = editText.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE1, message);
+        intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }
 }

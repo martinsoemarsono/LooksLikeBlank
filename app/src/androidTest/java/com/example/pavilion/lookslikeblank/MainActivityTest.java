@@ -42,6 +42,7 @@ public class MainActivityTest {
     public void clickTouchMeIfYouDare_OpensPicture() throws Exception {
         onView(withText("Touch Me If You Dare"))
                 .perform(click());
+        //matches withHint is case sensitive
         onView(withId(R.id.editText3))
                 .check(matches(withHint("What do you see?")));
     }
