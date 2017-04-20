@@ -35,7 +35,7 @@
                 android:value=".MainActivity" />
         </activity>
         <activity android:name=".AnswerActivity"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".TouchMeIfYouDare">
 
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
