@@ -9,4 +9,7 @@
     <string name="Answer">Check out what it is!</string>
     <string name="Next">Next!</string>
     <string name="Previous">Previous!</string>
+    <string name="Your_Answer">You Answered:</string>
+    <string name="If_Answer_Matches">We See The Same Thing!</string>
+    <string name="Actual_Answer">What We See:</string>
 </resources>
