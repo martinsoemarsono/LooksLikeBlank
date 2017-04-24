@@ -33,7 +33,7 @@ public class TouchMeIfYouDareTest {
             new ActivityTestRule<TouchMeIfYouDare>(TouchMeIfYouDare.class);
 
     @Test
-    public void WeSeeTheSameThing() throws Exception {
+    public void AnswerSubmitted() throws Exception {
         onView(withId(R.id.editText3))
          .perform(typeText(AcceptableAnswer1));
         closeSoftKeyboard();
