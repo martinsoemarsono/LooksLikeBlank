@@ -6,13 +6,13 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 public class AnswerActivity extends AppCompatActivity {
-    private static final String ifAMatch = "We See The Same Thing!";
+    public static final String ifAMatch = "We See The Same Thing!";
 
-    private static final String AcceptableAnswer1 = "A Man";
-    private static final String AcceptableAnswer2 = "A Human";
-    private static final String AcceptableAnswer3 = "A Human Being";
-    private static final String AcceptableAnswer4 = "Human";
-    private static final String AcceptableAnswer5 = "Man";
+    public static final String AcceptableAnswer1 = "A Man";
+    public static final String AcceptableAnswer2 = "A Human";
+    public static final String AcceptableAnswer3 = "A Human Being";
+    public static final String AcceptableAnswer4 = "Human";
+    public static final String AcceptableAnswer5 = "Man";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,16 +29,19 @@ public class AnswerActivity extends AppCompatActivity {
 
         TextView textView1 = (TextView) findViewById(R.id.textView6);
 
-        if (message.toLowerCase().equals(AcceptableAnswer1.toLowerCase())
-         || (message.toLowerCase().equals(AcceptableAnswer2.toLowerCase()))
-         || (message.toLowerCase().equals(AcceptableAnswer3.toLowerCase()))
-         || (message.toLowerCase().equals(AcceptableAnswer4.toLowerCase()))
-         || (message.toLowerCase().equals(AcceptableAnswer5.toLowerCase()))) {
+        if (message.toLowerCase().replaceAll("\\s+$", "").equals(AcceptableAnswer1.toLowerCase()
+         .replaceAll("\\s+$", ""))
+         || (message.toLowerCase().replaceAll("\\s+$", "").equals(AcceptableAnswer2.toLowerCase()
+         .replaceAll("\\s+$", "")))
+         || (message.toLowerCase().replaceAll("\\s+$", "").equals(AcceptableAnswer3.toLowerCase()
+         .replaceAll("\\s+$", "")))
+         || (message.toLowerCase().replaceAll("\\s+$", "").equals(AcceptableAnswer4.toLowerCase()
+         .replaceAll("\\s+$", "")))
+         || (message.toLowerCase().replaceAll("\\s+$", "").equals(AcceptableAnswer5.toLowerCase()
+         .replaceAll("\\s+$", "")))) {
             textView1.setText(ifAMatch);
         } else {
             textView1.setText(null);
         }
     }
-
-
 }

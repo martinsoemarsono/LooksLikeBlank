@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import static android.R.attr.duration;
+
 public class TouchMeIfYouDare extends AppCompatActivity {
 public static final String EXTRA_MESSAGE = "com.example.pavilion.MESSAGE";
 
@@ -21,7 +23,11 @@ public static final String EXTRA_MESSAGE = "com.example.pavilion.MESSAGE";
         Intent intent = new Intent(this, AnswerActivity.class);
         EditText editText = (EditText) findViewById(R.id.editText3);
         String message = editText.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message);
-        startActivity(intent);
+        if (!message.equals(null)) {
+            intent.putExtra(EXTRA_MESSAGE, message);
+            startActivity(intent);
+        } else {
+
+        }
     }
 }
