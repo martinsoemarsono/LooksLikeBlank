@@ -20,6 +20,7 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static com.example.pavilion.lookslikeblank.AnswerActivity.AcceptableAnswer1;
 import static com.example.pavilion.lookslikeblank.AnswerActivity.AcceptableAnswer3;
 import static com.example.pavilion.lookslikeblank.AnswerActivity.ifAMatch;
+import static com.example.pavilion.lookslikeblank.EspressoTestMatchers.withDrawable;
 
 /**
  * Created by Pavilion on 4/20/2017.
@@ -32,6 +33,7 @@ public class TouchMeIfYouDareTest {
     public ActivityTestRule<TouchMeIfYouDare> TouchMeIfYouDareActivityTestRule =
             new ActivityTestRule<TouchMeIfYouDare>(TouchMeIfYouDare.class);
 
+
     @Test
     public void AnswerSubmitted() throws Exception {
         onView(withId(R.id.editText3))
@@ -42,6 +44,7 @@ public class TouchMeIfYouDareTest {
         onView(withId(R.id.textView3))
          .check(matches(withText(AcceptableAnswer1)));
     }
+
 
     public void ClearInput(){
         onView(withId(R.id.editText3)).perform(clearText());
@@ -55,9 +58,9 @@ public class TouchMeIfYouDareTest {
 
         onView(withId(R.id.button3))
          .perform(click());
-        onView(withId(R.id.textView6))
-         .check(matches(withText(ifAMatch)));
+
     }
+
 
     @Test
     public void CapitalizationTest() throws Exception {
@@ -81,4 +84,23 @@ public class TouchMeIfYouDareTest {
             ClearInput();
         }
     }
+
+
+    @Test
+    public void CorrectImageTest() throws Exception {
+        onView(withId(R.id.imageView2))
+         .check(matches(withDrawable(R.drawable.picture1)));
+    }
+
+    /*
+    @Test
+    public void NextTest() throws Exception {
+        onView(withId(R.id.button10))
+         .perform(click());
+        onView(withId(R.id.button10))
+         .check(matches(withText("Next")));
+        onView(withId(R.id.imageView2))
+         .check(matches(withDrawable(R.drawable.picture2)));
+    }
+    */
 }
