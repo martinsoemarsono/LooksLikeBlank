@@ -29,10 +29,11 @@ import static com.example.pavilion.lookslikeblank.EspressoTestMatchers.withDrawa
 @RunWith(AndroidJUnit4.class)
 public class TouchMeIfYouDareTest {
 
+    String[] strArray = new String[5];
+
     @Rule
     public ActivityTestRule<TouchMeIfYouDare> TouchMeIfYouDareActivityTestRule =
             new ActivityTestRule<TouchMeIfYouDare>(TouchMeIfYouDare.class);
-
 
     @Test
     public void AnswerSubmitted() throws Exception {
@@ -45,12 +46,14 @@ public class TouchMeIfYouDareTest {
          .check(matches(withText(AcceptableAnswer1)));
     }
 
-
     public void ClearInput(){
+        //Clears the text in the input field
         onView(withId(R.id.editText3)).perform(clearText());
     }
 
     public void InputIteratorValidator(String stringInput){
+        //Automates actions starting from typing,
+        // closing the soft keyboard and clicking
         onView(withId(R.id.editText3))
          .perform(typeText(stringInput));
 
@@ -58,14 +61,21 @@ public class TouchMeIfYouDareTest {
 
         onView(withId(R.id.button3))
          .perform(click());
-
     }
 
+    public void ifAMatchTest() throws Exception {
+        onView(withId(R.id.textView6))
+         .check(matches(withText(ifAMatch)));
+    }
+
+    public void ifNotAMatchTest() throws Exception {
+        onView(withId(R.id.textView6))
+         .check(matches(withText(" ")));
+    }
 
     @Test
     public void CapitalizationTest() throws Exception {
-        String[] strArray = new String[5];
-
+        //Test Strings
         strArray[0] = "man ";
         strArray[1] = "human";
         strArray[2] = "a man";
@@ -74,20 +84,45 @@ public class TouchMeIfYouDareTest {
 
         for(int i = 0; i < strArray.length; i++){
             InputIteratorValidator(strArray[i]);
+            ifAMatchTest();
             pressBack();
             ClearInput();
         }
 
         for(int i = 0; i < strArray.length; i++){
             InputIteratorValidator(strArray[i].toUpperCase());
+            ifAMatchTest();
             pressBack();
             ClearInput();
         }
     }
 
+    @Test
+    public void ContentTest() throws Exception {
+        //Test Strings
+        strArray[0] = "min ";
+        strArray[1] = "hooman";
+        strArray[2] = "a many";
+        strArray[3] = "a hman ";
+        strArray[4] = "a human bein";
 
+        for(int i = 0; i < strArray.length; i++){
+            InputIteratorValidator(strArray[i]);
+            ifNotAMatchTest();
+            pressBack();
+            ClearInput();
+        }
+
+        for(int i = 0; i < strArray.length; i++){
+            InputIteratorValidator(strArray[i].toUpperCase());
+            ifNotAMatchTest();
+            pressBack();
+            ClearInput();
+        }
+    }
     @Test
     public void CorrectImageTest() throws Exception {
+        //Checks if the image showing is the right one
         onView(withId(R.id.imageView2))
          .check(matches(withDrawable(R.drawable.picture1)));
     }
@@ -95,12 +130,27 @@ public class TouchMeIfYouDareTest {
     /*
     @Test
     public void NextTest() throws Exception {
+        //Goes to the next page
         onView(withId(R.id.button10))
          .perform(click());
         onView(withId(R.id.button10))
          .check(matches(withText("Next")));
         onView(withId(R.id.imageView2))
          .check(matches(withDrawable(R.drawable.picture2)));
+    }
+
+    @Test
+    public void PreviousTest() throws Exception {
+        //Go to the next page first
+        NextTest();
+
+        //Clicks the previous button
+        onView(withId(R.id.button9))
+         .perform(click());
+        onView(withId(R.id.button9))
+         .check(matches(withText("Previous")));
+        onView(withId(R.id.imageView2))
+         .check(matches(withDrawable(R.drawable.picture1)));
     }
     */
 }

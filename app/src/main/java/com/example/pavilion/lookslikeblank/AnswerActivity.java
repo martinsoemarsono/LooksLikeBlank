@@ -41,7 +41,7 @@ public class AnswerActivity extends AppCompatActivity {
          .replaceAll("\\s+$", "")))) {
             textView1.setText(ifAMatch);
         } else {
-            textView1.setText(null);
+            textView1.setText(" ");
         }
     }
 }
