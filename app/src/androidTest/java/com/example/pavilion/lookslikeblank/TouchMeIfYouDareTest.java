@@ -120,6 +120,7 @@ public class TouchMeIfYouDareTest {
             ClearInput();
         }
     }
+
     @Test
     public void CorrectImageTest() throws Exception {
         //Checks if the image showing is the right one
@@ -127,7 +128,6 @@ public class TouchMeIfYouDareTest {
          .check(matches(withDrawable(R.drawable.picture1)));
     }
 
-    /*
     @Test
     public void NextTest() throws Exception {
         //Goes to the next page
@@ -152,5 +152,40 @@ public class TouchMeIfYouDareTest {
         onView(withId(R.id.imageView2))
          .check(matches(withDrawable(R.drawable.picture1)));
     }
-    */
+
+    @Test
+    public void NextOnLastScreenTest() throws Exception {
+        /*
+        When users click on the next button on the last picture
+        of the app, the following will happen:
+        - The app will pop up a toast which displays a message
+         telling the user that there is no more picture to play with
+        - The app will not move to a different screen
+         */
+
+        /*
+         for (int i = 0; i < numOfPages; i++) {
+            NextTest();
+         }
+        */
+
+        /*
+
+        The following code is to test for a Toast item
+         Source: (http://stackoverflow.com/questions/
+         28390574/checking-toast-message-in-android-espresso)
+
+         import static android.support.test.espresso.assertion.ViewAssertions.matches;
+         import static android.support.test.espresso.matcher.RootMatchers.withDecorView;
+         import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
+         import static android.support.test.espresso.matcher.ViewMatchers.withText;
+         import static org.hamcrest.Matchers.is;
+         import static org.hamcrest.Matchers.not;
+         ....
+         onView(withText(R.string.TOAST_STRING)).inRoot(withDecorView(not(is(getActivity().getWindow()
+          .getDecorView())))).check(matches(isDisplayed()));
+          */
+
+
+    }
 }

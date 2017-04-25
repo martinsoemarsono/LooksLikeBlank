@@ -27,8 +27,12 @@ public class AnswerActivity extends AppCompatActivity {
         TextView textView = (TextView) findViewById(R.id.textView3);
         textView.setText(message);
 
+        //Find textView6 on the app and assign it to textView1 variable
         TextView textView1 = (TextView) findViewById(R.id.textView6);
 
+        //Data validation on the input in textView1.  Users will be allowed to put in
+        //a variety of different inputs (this includes non-case-sensitive, regardless of spacebar
+        //characters, as well as synonyms of the answer).
         if (message.toLowerCase().replaceAll("\\s+$", "").equals(AcceptableAnswer1.toLowerCase()
          .replaceAll("\\s+$", ""))
          || (message.toLowerCase().replaceAll("\\s+$", "").equals(AcceptableAnswer2.toLowerCase()
