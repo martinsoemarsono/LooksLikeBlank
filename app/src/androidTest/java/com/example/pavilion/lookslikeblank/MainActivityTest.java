@@ -24,27 +24,27 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
 public class MainActivityTest {
 
     public static final String TEST_STRING = "This is just a test";
+
     @Rule
     public ActivityTestRule<MainActivity> mainActivityActivityTestRule =
-            new ActivityTestRule<MainActivity>(MainActivity.class);
+     new ActivityTestRule<MainActivity>(MainActivity.class);
 
     @Test
     public void clickSendButton_sendsStringToDisplayMessageActivity() throws Exception {
         onView(withId(R.id.editText))
-                .perform(typeText(TEST_STRING));
+         .perform(typeText(TEST_STRING));
         onView(withText("Send"))
-                .perform(click());
+         .perform(click());
         onView(withId(R.id.textView2))
-                .check(matches(withText(TEST_STRING)));
+         .check(matches(withText(TEST_STRING)));
     }
 
     @Test
     public void clickTouchMeIfYouDare_OpensPicture() throws Exception {
         onView(withText("Touch Me If You Dare"))
-                .perform(click());
+         .perform(click());
         //matches withHint is case sensitive
         onView(withId(R.id.editText3))
-                .check(matches(withHint("What do you see?")));
+         .check(matches(withHint("What do you see?")));
     }
-
 }

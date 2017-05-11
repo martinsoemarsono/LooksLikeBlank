@@ -14,9 +14,11 @@ import static android.R.attr.duration;
 public class TouchMeIfYouDare extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.example.pavilion.MESSAGE";
 
+    /*
     Context context = getApplicationContext();
     CharSequence text = "No answer is read";
     int duration = Toast.LENGTH_SHORT;
+*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +35,8 @@ public class TouchMeIfYouDare extends AppCompatActivity {
             intent.putExtra(EXTRA_MESSAGE, message);
             startActivity(intent);
         } else {
-            Toast.makeText(context, text, duration).show();
-            CheckAnswer(view);
+            /*Toast.makeText(context, text, duration).show();
+            CheckAnswer(view);*/
         }
     }
 }

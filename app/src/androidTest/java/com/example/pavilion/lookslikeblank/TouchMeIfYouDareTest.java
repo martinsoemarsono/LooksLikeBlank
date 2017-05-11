@@ -127,7 +127,7 @@ public class TouchMeIfYouDareTest {
         onView(withId(R.id.imageView2))
          .check(matches(withDrawable(R.drawable.picture1)));
     }
-
+/*
     @Test
     public void NextTest() throws Exception {
         //Goes to the next page
@@ -184,8 +184,9 @@ public class TouchMeIfYouDareTest {
          ....
          onView(withText(R.string.TOAST_STRING)).inRoot(withDecorView(not(is(getActivity().getWindow()
           .getDecorView())))).check(matches(isDisplayed()));
-          */
+          *
 
 
-    }
+    }*/
+
 }

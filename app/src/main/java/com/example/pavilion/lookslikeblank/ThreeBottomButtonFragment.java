@@ -7,18 +7,17 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link TouchMeIfYouDareFragment.OnFragmentInteractionListener} interface
+ * {@link ThreeBottomButtonFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link TouchMeIfYouDareFragment#newInstance} factory method to
+ * Use the {@link ThreeBottomButtonFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class TouchMeIfYouDareFragment extends Fragment {
-
+public class ThreeBottomButtonFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -30,7 +29,7 @@ public class TouchMeIfYouDareFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public TouchMeIfYouDareFragment() {
+    public ThreeBottomButtonFragment() {
         // Required empty public constructor
     }
 
@@ -40,11 +39,11 @@ public class TouchMeIfYouDareFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment TouchMeIfYouDareFragment.
+     * @return A new instance of fragment ThreeBottomButtonFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static TouchMeIfYouDareFragment newInstance(String param1, String param2) {
-        TouchMeIfYouDareFragment fragment = new TouchMeIfYouDareFragment();
+    public static ThreeBottomButtonFragment newInstance(String param1, String param2) {
+        ThreeBottomButtonFragment fragment = new ThreeBottomButtonFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -64,8 +63,7 @@ public class TouchMeIfYouDareFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_touch_me_if_you_dare, container, false);
+        return inflater.inflate(R.layout.three_bottom_button_fragment, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -104,6 +102,6 @@ public class TouchMeIfYouDareFragment extends Fragment {
      */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        public void onFragmentInteraction(Uri uri);
+        void onFragmentInteraction(Uri uri);
     }
 }
