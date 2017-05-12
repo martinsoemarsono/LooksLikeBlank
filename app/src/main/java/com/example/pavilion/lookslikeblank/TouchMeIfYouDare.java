@@ -2,12 +2,20 @@ package com.example.pavilion.lookslikeblank;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.Statement;
 
 import static android.R.attr.duration;
 
@@ -25,6 +33,7 @@ public class TouchMeIfYouDare extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_touch_me_if_you_dare_2);
+
 /*
         if (findViewById(R.id.fragment_container) != null) {
             if (savedInstanceState != null) {
@@ -73,5 +82,4 @@ public class TouchMeIfYouDare extends AppCompatActivity
             CheckAnswer(view);*/
         }
     }
-
 }
