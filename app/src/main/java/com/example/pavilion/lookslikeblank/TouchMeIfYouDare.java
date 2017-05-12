@@ -11,7 +11,8 @@ import android.widget.Toast;
 
 import static android.R.attr.duration;
 
-public class TouchMeIfYouDare extends AppCompatActivity {
+public class TouchMeIfYouDare extends AppCompatActivity
+        implements ThreeBottomButtonFragment.ButtonClickListener {
     public static final String EXTRA_MESSAGE = "com.example.pavilion.MESSAGE";
 
     /*
@@ -23,7 +24,40 @@ public class TouchMeIfYouDare extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_touch_me_if_you_dare);
+        setContentView(R.layout.activity_touch_me_if_you_dare_2);
+/*
+        if (findViewById(R.id.fragment_container) != null) {
+            if (savedInstanceState != null) {
+                return;
+            }
+        }
+
+        ImageFragment topFragment = new ImageFragment();
+        ThreeBottomButtonFragment bottomFragment = new ThreeBottomButtonFragment();
+
+        topFragment.setArguments(getIntent().getExtras());
+
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.fragment_container, topFragment).commit();
+
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.fragment_container, bottomFragment).commit();*/
+    }
+
+    @Override
+    public void PreviousButtonListener(int position) {
+
+    }
+
+    @Override
+    public void ProceedButtonListener(int position) {
+        Intent intent = new Intent(this, AnswerActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void NextButtonListener(int position) {
+
     }
 
     public void CheckAnswer(View view) {
@@ -39,4 +73,5 @@ public class TouchMeIfYouDare extends AppCompatActivity {
             CheckAnswer(view);*/
         }
     }
+
 }
